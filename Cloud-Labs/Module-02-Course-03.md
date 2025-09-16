@@ -10,7 +10,6 @@
 - Asset and resource management
 - Steps for asset management
 - On-the-job asset management applications
-- Test your knowledge: Asset management
 - Vulnerability remediation and posture management
 - Vulnerability remediation and posture management in software development
 - Posture management tools and techniques
@@ -18,7 +17,6 @@
 - IT automation tools for security configuration management
 - Guide to web application security scanning
 - Identify vulnerabilities and remediation techniques
-- Test your knowledge: Vulnerability remediation and posture management
 
 ## 🛡️ Security Program for Small Businesses
 - Studied the essential steps for building a security program:
