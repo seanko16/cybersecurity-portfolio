@@ -7,8 +7,6 @@ This repo documents my learning journey and projects in **SOC analysis, cloud se
 - **SOC-Notes/** → SIEM queries, investigation steps, incident handling notes.
 - **TryHackMe/** → Daily lab write-ups & summaries.
 - **Cloud-Security/** → Google Cloud security labs, IAM, and detection projects.
-- **Detection-Playbooks/** → Detection rules mapped to MITRE ATT&CK.
-- **Incident-Reports/** → Redacted reports and simulations of incidents I’ve worked on.
 
 ## 🎯 Goals
 - Build a strong foundation as a SOC Analyst (Tier 1 → Tier 2).
