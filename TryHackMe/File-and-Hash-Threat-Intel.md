@@ -1,4 +1,4 @@
-# TryHackMe File and Hash Threat Intelligence
+# File and Hash Threat Intelligence
 ## Overview
 During this room, I explored indicators of suspicious files and learned how to identify and investigate potential threats. Key topics included heuristic filename indicators, file hashing, threat intelligence correlation, and safe analysis of malicious files.
 ## Heuristic Filename Indicators
