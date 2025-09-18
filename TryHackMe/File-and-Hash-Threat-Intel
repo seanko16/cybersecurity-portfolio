@@ -1,39 +1,55 @@
-# 🧩 TryHackMe — File & Hash Threat Intelligence
+🧩 TryHackMe — File & Hash Threat Intelligence
+📚 What I Learned
+During this room, I explored indicators of suspicious files and learned how to identify and investigate potential threats. Key topics included heuristic filename indicators and file hash analysis.
 
-## 📚 What Have I Learned
-- so far, in the room I have touched about the types of file paths that indicate a suspicious file path.
-- and I learned about heuristic filename indicators, such as:
+Heuristic Filename Indicators
+Double Extensions → invoice.pdf.exe
+Why it's a problem: By default, Windows hides known file extensions. This can trick users into thinking a malicious file is safe.
+Prevention: Disable the option to hide file extensions in File Explorer.
 
-- Double Extensions -> invoice.pdf.exe
-why is it a problem? -> because by default windows hides the file extensions. which makes the victim believe the file is not malicious.
-how do we prevent it? -> by disabling the feature to hide extensions of the file explorer.
+System Binary Impersonation → svchost.exe
+Why it's a problem: Attackers may create files that appear to be legitimate system processes, while they are actually malicious.
+Prevention: Don't rely solely on filenames. Instead, check file paths and create an allowlist of legitimate paths for specific filenames using Windows Defender Application Control (WDAC).
 
-- System Binary Impersonatation -> svchost.exe
-why is it a problem? -> because we may think its a legitimate process running on our system while it's actually a trojan.
-how do we prevent it? ->  by not relaying on the filename but on the file path and creating an allowlist for legit paths of specific filenames using: Windows Defender Application Control (WDAC)
+High-Entropy Strings → jnkaf77t1.exe
+Why it's a problem: These randomly generated filenames are often used by attackers to evade antivirus detection.
+Prevention: Be cautious of suspicious filenames and provide employees with regular phishing awareness training to recognize potentially dangerous files.
 
-- High-entropy Strings -> jnkaf77t1.exe
-why is it a problem? -> it's usually a random generated filename created by the attacker to avoid/bypass the "sign" it has by Antivirus software.
-how do we prevent it? -> Being cautious of suspicious filenames, and provide employees with regular phishing awareness training and guidance on recognizing suspicious files
+Masquerading → backup-2300.exe
+Why it's a problem: Users may assume files with benign-looking names are safe.
+Prevention:
+Look for filenames executed from unusual locations, such as TEMP folders.
+Check the parent process of newly created files.
+Include this knowledge in employee phishing awareness training.
 
-- Masquerading -> backup-2300.exe
-why is it a problem? -> Users may believe it's a legitimate file because of it not suspicious name.
-how do we prevent it? -> Look for filenames that are not supposed to be executed from their location such as: TEMP folders. Or check the Parent process of created files in the system.
-And include this in the employees phishing awareness training.
+File Hashing
+I learned how to compute file hashes across multiple platforms:
 
-additionally I have learned how to check for the file hases using powershell/cmd/linux.
-powershell: get-filehash -literalpath "<file_path\filename.ext>" -Algorithm SHA256
-cmd: certutil -hashfile "<filename.ext>" SHA256
-linux: sha256sum "<file_path\filename.ext>"
-Store the hashes in lowercase to avoid needless differences.
-Hash what matters in your investigation. For example, if the malware lives inside a zip file, hash both the archive and the extracted binary.
-i learned about another tool similiar to virustotal named malwarebazzar, its complex syntax and its dashboard showcase.
-I have learned that I might want to correlate between a couple sources and not just one like virustotal. - something I have acknowledged in the room prior.
-also i have learned that virustotal can correlate known malware with specific MITRE techniques which I can use to forward my report better.
+PowerShell:
+Get-FileHash -LiteralPath "<file_path\filename.ext>" -Algorithm SHA256
 
-## 🛠️ Skills Practiced
+CMD:
+certutil -hashfile "<filename.ext>" SHA256
 
+Linux:
+sha256sum "<file_path/filename.ext>"
 
-## ✔️ Takeaway 
-I understand the better way of assesing IOC's. I now know how to act upon incidents/events that require more investigations.
-I am excited to continue to the other rooms related to CTI.
+Best Practices:
+Store hashes in lowercase to avoid discrepancies.
+Hash what matters for your investigation. For example, if malware is inside a ZIP file, hash both the archive and the extracted binary.
+
+Threat Intelligence Tools
+MalwareBazaar: A platform similar to VirusTotal, with a complex syntax and a dashboard for analyzing malware samples.
+Correlating multiple sources: I learned the importance of using multiple threat intelligence sources rather than relying on one.
+VirusTotal & MITRE Techniques: VirusTotal can correlate known malware with MITRE ATT&CK techniques, which is useful for writing more detailed and actionable reports.
+
+🛠️ Skills Practiced
+Identifying heuristic indicators of suspicious files
+Calculating SHA256 hashes on PowerShell, CMD, and Linux
+Threat intelligence correlation across multiple platforms
+Security awareness considerations for employees
+
+✔️ Takeaways
+File path, filename, and execution location are critical when assessing file legitimacy.
+Combining multiple sources of threat intelligence provides a more complete picture.
+Employee training on phishing and suspicious file recognition is essential for organizational security.
