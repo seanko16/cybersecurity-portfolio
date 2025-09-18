@@ -32,27 +32,46 @@ Example: `backup-2300.exe`
 | PowerShell | `Get-FileHash` | `Get-FileHash -LiteralPath "<file_path>" -Algorithm SHA256` |
 | CMD | `certutil` | `certutil -hashfile "<filename.ext>" SHA256` |
 | Linux | `sha256sum` | `sha256sum "<file_path>"` |
-### Hash Analysis Best Practices
-- Store hashes in lowercase format to ensure consistency across platforms
-- Hash both compressed archives and extracted contents when analyzing packed malware
-- Maintain chain of custody documentation for forensic integrity
-## Safe File Execution and Sandbox Analysis
-### Need for Sandbox Environment
-- Execute suspicious files in isolated environments to observe behavior safely
-- Dynamic analysis reveals capabilities not visible in static analysis
-- Generates IOCs for threat hunting and attribution
-### Hash-Based Sandbox Tools
-- **Hash Lookup**: Submit file hashes to platforms like Hybrid-Analysis for existing reports
-- **Intelligence Extraction**: Retrieve process relationships, C2 servers, network indicators, file modifications
-- **IOC Generation**: Network IPs/domains, file hashes, registry keys, API usage patterns
-### Common Sandbox Evasion Tactics
-- **Environment Awareness**: VM detection, hardware fingerprinting
-- **Anti-Debug/Sandbox**: Debugging detection, sleep delays, user interaction requirements
-- **Limited Runtime**: Time-based triggers, conditional execution, multi-stage payloads
-- **Encrypted/Obfuscated Traffic**: SSL/TLS C2, domain generation algorithms, protocol tunneling
-- **Fileless/Living-off-the-Land**: Memory-only execution, PowerShell abuse, WMI exploitation
-### Analyst Sandboxing Checklist
-- **Pre-Execution**: Hash verification, system baseline, network isolation, snapshots
-- **Execution Confirmation**: Process monitoring, file system changes, network activity
-- **Runtime IOC Extraction**: Network indicators (IPs, domains), host indicators (files, registry), behavioral patterns
-- **MITRE ATT&CK Mapping**: Map observed behaviors to tactics/techniques for threat hunting
+
+## Best Practices
+- Store hashes in lowercase to avoid discrepancies.
+- Hash what matters: For example, if malware is inside a ZIP file, hash both the archive and its extracted binary.
+- To truly understand the impact of a malicious file, execute it safely in a controlled environment (sandbox or isolated VM) to prevent accidental infection.
+
+## Sandbox Analysis
+I learned that using sandbox tools, such as **Hybrid-Analysis**, can provide valuable intelligence about a suspicious file:
+- By submitting the file hash, you can extract related processes and see all system interactions.
+- Sandboxes reveal Indicators of Compromise (IOCs), such as:
+  - C2 server connections
+  - Related DLLs loaded
+  - Suspicious strings/files
+  - Network/registry modifications
+- This approach lets analysts gain deeper insight without risking the host system.
+
+## Sandbox Evasion Techniques
+Malware often tries to detect if it is running in a sandbox to avoid analysis. Common techniques include:
+- Delaying execution until real user activity is detected
+- Checking for virtual environments/analysis tools
+- Obfuscating network communication to hide C2 traffic
+- Awareness of these helps improve threat analysis
+
+## Threat Intelligence Tools
+- **MalwareBazaar**: Advanced platform/dashboard for analyzing malware samples.
+- **Hybrid-Analysis**: Sandbox for dynamic malware analysis and extracting IOCs.
+- **Correlating multiple sources**: Important to use more than one source for thorough analysis.
+- **VirusTotal & MITRE**: VirusTotal links known malware to MITRE ATT&CK techniques for actionable reports.
+
+## 🛠️ Skills Practiced
+- Identifying heuristic indicators of suspicious files
+- Calculating SHA256 hashes in PowerShell, CMD, Linux
+- Correlating threat intel across platforms
+- Using sandbox tools for safe malware analysis
+- Promoting security awareness for employees
+
+## ✔️ Takeaways
+- File path, filename, and execution location are critical for assessing file legitimacy.
+- High-entropy names, double extensions, and system impersonation = strong malware indicators.
+- Employee training on phishing/suspicious files is essential.
+- Combining threat intelligence sources gives a more complete defense.
+- Sandboxes allow safe execution of malicious files.
+- Awareness of sandbox evasion improves analysis.
