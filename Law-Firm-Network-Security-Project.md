@@ -16,7 +16,6 @@ Designed, implemented, and secured a comprehensive enterprise network infrastruc
 - Implemented network segmentation using VLANs and firewall rules
 - Configured VPN solutions for secure remote access
 - Deployed VoIP infrastructure with security controls
-- Applied IPS, web filtering, application control, and antivirus protection
 
 ### Documentation & Compliance
 - Created comprehensive documentation for all FortiGate configurations
