@@ -70,9 +70,9 @@ Malware often tries to detect if it is running in a sandbox to avoid analysis. C
 
 ## Takeaways
 
-- **Validate and hash files:** Ensure you have the correct binaries and generate hashes for investigations.  
-- **Check paths and filenames:** Unusual locations, double extensions, high-entropy names, or system impersonation often indicate malware.  
-- **Use sandboxes:** Safely observe file behavior and extract IOCs.  
-- **Leverage multiple sources:** Correlate intelligence from VirusTotal, MalwareBazaar, and Hybrid-Analysis.  
-- **Train employees:** Regular phishing and suspicious file awareness is essential.  
-- **Watch for evasion:** Malware may try to detect analysis environments.
+- Validation and hashing of files is essential to ensure accurate analysis.  
+- File paths and filenames provide important context; unusual locations, double extensions, high-entropy names, and system impersonation can indicate malware.  
+- Sandboxes allow safe observation of file behavior and extraction of IOCs.  
+- Correlating information from multiple intelligence sources, such as VirusTotal, MalwareBazaar, and Hybrid-Analysis, improves analysis.  
+- Employee awareness of phishing and suspicious files is critical for security.  
+- Malware may use sandbox evasion techniques, which should be considered during analysis.
