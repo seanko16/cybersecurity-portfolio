@@ -70,10 +70,9 @@ Malware often tries to detect if it is running in a sandbox to avoid analysis. C
 
 ## Takeaways
 
-- **Validate and hash files early:** Always confirm you have the exact binaries and generate hashes to use in investigations and threat intelligence sources.  
-- **Check file paths and filenames:** Look for unusual storage locations, trusted software directories, double extensions, high-entropy names, or system impersonation — these often indicate suspicious files.  
-- **Use controlled environments:** Execute suspicious files safely in a sandbox or isolated VM to observe behavior, extract network, persistence, and other IOCs, and confirm intent.  
-- **Leverage multiple intelligence sources:** Correlate information from platforms like VirusTotal, MalwareBazaar, and Hybrid-Analysis for a fuller picture.  
-- **Document and report findings:** Summarize indicators by type, describe observed behavior, and provide clear, evidence-backed recommendations.  
-- **Employee awareness matters:** Regular phishing and suspicious file training is critical to improving overall security.  
-- **Be mindful of sandbox evasion:** Malware may try to detect analysis environments; awareness of these techniques improves the accuracy of your investigation.
+- **Validate and hash files:** Ensure you have the correct binaries and generate hashes for investigations.  
+- **Check paths and filenames:** Unusual locations, double extensions, high-entropy names, or system impersonation often indicate malware.  
+- **Use sandboxes:** Safely observe file behavior and extract IOCs.  
+- **Leverage multiple sources:** Correlate intelligence from VirusTotal, MalwareBazaar, and Hybrid-Analysis.  
+- **Train employees:** Regular phishing and suspicious file awareness is essential.  
+- **Watch for evasion:** Malware may try to detect analysis environments.
