@@ -1,117 +1,88 @@
-# 🧩 TryHackMe — File & Hash Threat Intelligence
+# TryHackMe File and Hash Threat Intelligence
 
-## 📚 Overview
+## Overview
 
-This room explores **indicators of suspicious files** and techniques to identify and investigate potential threats. The focus is on **heuristic filename indicators** and **file hash analysis** for cybersecurity professionals.
+This room explores indicators of suspicious files and techniques to identify and investigate potential threats. The focus is on heuristic filename indicators and file hash analysis for cybersecurity professionals.
 
----
+## Heuristic Filename Indicators
 
-## 🚩 Heuristic Filename Indicators
+### Double Extensions
 
-### 1. **Double Extensions**
-**Example**: `invoice.pdf.exe`
+Example: `invoice.pdf.exe`
 
-- **❌ Problem**: Windows hides known file extensions by default, tricking users into believing malicious files are safe
-- **✅ Prevention**: Disable "Hide extensions for known file types" in File Explorer settings
+- **Problem**: Windows hides known file extensions by default, enabling social engineering attacks where malicious executables masquerade as documents
+- **Mitigation**: Disable "Hide extensions for known file types" in File Explorer settings to reveal true file types
 
-### 2. **System Binary Impersonation**
-**Example**: `svchost.exe`
+### System Binary Impersonation
 
-- **❌ Problem**: Attackers create files mimicking legitimate system processes
-- **✅ Prevention**:
-  - Don't rely solely on filenames for legitimacy verification
-  - Verify file paths and locations
-  - Implement allowlists for legitimate paths using **Windows Defender Application Control (WDAC)**
+Example: `svchost.exe`
 
-### 3. **High-Entropy Strings**
-**Example**: `jnkaf77t1.exe`
+- **Problem**: Threat actors create files mimicking legitimate system processes to evade detection
+- **Mitigation**:
+  - Verify file paths and digital signatures rather than relying on filenames
+  - Implement application control policies using Windows Defender Application Control (WDAC)
+  - Monitor process execution from non-standard locations
 
-- **❌ Problem**: Random filenames used to evade antivirus detection
-- **✅ Prevention**:
-  - Be suspicious of randomly generated filenames
-  - Conduct regular **phishing awareness training** for employees
+### High-Entropy Strings
 
-### 4. **Masquerading**
-**Example**: `backup-2300.exe`
+Example: `jnkaf77t1.exe`
 
-- **❌ Problem**: Users assume benign-looking names are safe
-- **✅ Prevention**:
-  - Monitor files executed from unusual locations (e.g., TEMP folders)
-  - Check parent processes of newly created files
-  - Include in employee security awareness training
+- **Problem**: Randomly generated filenames used to evade signature-based detection
+- **Analysis**: High entropy in filenames may indicate programmatically generated malware
+- **Detection**: Implement entropy analysis in security monitoring systems
 
----
+### Masquerading
 
-## 🔐 File Hashing Techniques
+Example: `backup-2300.exe`
+
+- **Problem**: Benign-appearing names used to bypass user scrutiny
+- **Detection**:
+  - Monitor file execution from temporary directories
+  - Analyze parent processes of suspicious executables
+  - Correlate filename patterns with known threat campaigns
+
+## File Hashing Techniques
 
 ### Cross-Platform Hash Commands
 
 | Platform | Command | Example |
 |----------|---------|----------|
-| **PowerShell** | `Get-FileHash` | `Get-FileHash -LiteralPath "<file_path>" -Algorithm SHA256` |
-| **CMD** | `certutil` | `certutil -hashfile "<filename.ext>" SHA256` |
-| **Linux** | `sha256sum` | `sha256sum "<file_path>"` |
+| PowerShell | `Get-FileHash` | `Get-FileHash -LiteralPath "<file_path>" -Algorithm SHA256` |
+| CMD | `certutil` | `certutil -hashfile "<filename.ext>" SHA256` |
+| Linux | `sha256sum` | `sha256sum "<file_path>"` |
 
-### 📋 Best Practices for File Hashing
+### Hash Analysis Best Practices
 
-- **Store hashes in lowercase** to avoid discrepancies
-- **Hash what matters** for your investigation:
-  - If malware is inside a ZIP file, hash both the archive AND the extracted binary
-- **Document hash sources** and maintain chain of custody
+- Store hashes in lowercase format to ensure consistency across platforms
+- Hash both compressed archives and extracted contents when analyzing packed malware
+- Maintain chain of custody documentation for forensic integrity
+- Cross-reference hashes against multiple threat intelligence sources
 
----
+## Threat Intelligence Tools
 
-## 🛠️ Threat Intelligence Tools
+### MalwareBazaar
 
-### **MalwareBazaar**
-- Platform similar to VirusTotal
-- Features complex syntax and analytical dashboard
-- Useful for malware sample analysis
+- Community-driven malware sample repository
+- Provides advanced search capabilities and analytical dashboard
+- Supports hash-based IOC correlation and family classification
 
-### **Multi-Source Correlation**
-- **Never rely on single sources** for threat intelligence
-- Cross-reference findings across multiple platforms
-- **VirusTotal + MITRE ATT&CK**: Correlate known malware with MITRE techniques for detailed reporting
+### Multi-Source Correlation
 
----
+- Correlate findings across VirusTotal, MalwareBazaar, and proprietary threat feeds
+- Map identified threats to MITRE ATT&CK framework techniques
+- Validate threat intelligence through multiple independent sources
 
-## 🎯 Skills Practiced
+## Technical Skills Applied
 
-✅ **Technical Skills**:
-- Identifying heuristic indicators of suspicious files
-- Calculating SHA256 hashes across PowerShell, CMD, and Linux
-- Threat intelligence correlation across multiple platforms
+- Heuristic analysis of suspicious file indicators
+- Cross-platform hash calculation (SHA256)
+- Threat intelligence correlation and validation
+- IOC enrichment through multiple data sources
 
-✅ **Security Awareness**:
-- Employee training considerations
-- Phishing recognition techniques
-- File legitimacy assessment
+## Key Findings
 
----
+**File Legitimacy Assessment**: File path, execution location, and digital signatures are more reliable indicators than filename analysis alone.
 
-## 🔑 Key Takeaways
+**Intelligence Integration**: Multi-source threat intelligence correlation provides comprehensive threat context and reduces false positives.
 
-> **🎯 Critical Assessment Factors**: File path, filename, and execution location are essential when determining file legitimacy.
-
-> **🔍 Intelligence Gathering**: Combining multiple threat intelligence sources provides comprehensive threat analysis.
-
-> **👥 Human Factor**: Employee training on phishing and suspicious file recognition is fundamental to organizational security posture.
-
----
-
-## 📊 Quick Reference Card
-
-### Suspicious File Indicators Checklist
-- [ ] Double file extensions (.pdf.exe, .doc.scr)
-- [ ] System process names in unusual locations
-- [ ] High-entropy/random filenames
-- [ ] Benign names in suspicious contexts
-- [ ] Execution from TEMP/Downloads folders
-- [ ] Unusual parent processes
-
-### Hash Verification Workflow
-1. **Calculate** file hash using appropriate platform tool
-2. **Store** hash in lowercase format
-3. **Cross-reference** with threat intelligence databases
-4. **Document** findings and sources
-5. **Correlate** with MITRE ATT&CK techniques if applicable
+**Detection Engineering**: Filename heuristics should complement, not replace, behavioral analysis and signature-based detection methods.
