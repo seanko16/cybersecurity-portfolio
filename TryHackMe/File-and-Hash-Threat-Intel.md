@@ -1,6 +1,6 @@
 # TryHackMe File and Hash Threat Intelligence
 ## Overview
-This room explores indicators of suspicious files and techniques to identify and investigate potential threats. The focus is on heuristic filename indicators and file hash analysis for cybersecurity professionals.
+This room explores indicators of suspicious files and techniques to identify and investigate potential threats. The focus is on heuristic filename indicators and file hash analysis for better understanding of the Events.
 ## Heuristic Filename Indicators
 ### Double Extensions
 Example: `invoice.pdf.exe`
