@@ -70,6 +70,8 @@ Malware often tries to detect if it is running in a sandbox to avoid analysis. C
 
 ## Takeaways
 
+This room was really engaging, and I really enjoyed exploring the topic and learning from it.  
+
 - Validation and hashing of files is essential to ensure accurate analysis.  
 - File paths and filenames provide important context; unusual locations, double extensions, high-entropy names, and system impersonation can indicate malware.  
 - Sandboxes allow safe observation of file behavior and extraction of IOCs.  
