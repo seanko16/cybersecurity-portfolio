@@ -61,14 +61,14 @@ Malware often tries to detect if it is running in a sandbox to avoid analysis. C
 - **Correlating multiple sources**: Important to use more than one source for thorough analysis.
 - **VirusTotal & MITRE**: VirusTotal links known malware to MITRE ATT&CK techniques for actionable reports.
 
-## 🛠️ Skills Practiced
+## Skills Practiced
 - Identifying heuristic indicators of suspicious files
 - Calculating SHA256 hashes in PowerShell, CMD, Linux
 - Correlating threat intel across platforms
 - Using sandbox tools for safe malware analysis
 - Promoting security awareness for employees
 
-## ✔️ Takeaways
+## Takeaways
 - File path, filename, and execution location are critical for assessing file legitimacy.
 - High-entropy names, double extensions, and system impersonation = strong malware indicators.
 - Employee training on phishing/suspicious files is essential.
