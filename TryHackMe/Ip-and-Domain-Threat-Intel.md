@@ -1,4 +1,4 @@
-# File and Hash Threat Intelligence
+# IP and Domain Threat Intelligence
 ## Overview
 During this room, I explored indicators of suspicious files and learned how to identify and investigate potential threats. Key topics included heuristic filename indicators, file hashing, threat intelligence correlation, and safe analysis of malicious files.
 
@@ -17,7 +17,7 @@ When enriching a domain, these are the DNS records that matter most.
 
 ---
 
-## ✅ Workflow for Analysts
+## Workflow at The Job
 1. **Check A/AAAA** → resolve domain, check IP reputation.  
 2. **Review NS** → confirm DNS provider legitimacy.  
 3. **If email-related** → analyze MX + TXT (SPF/DKIM/DMARC).  
