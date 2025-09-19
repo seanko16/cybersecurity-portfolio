@@ -18,8 +18,9 @@ When enriching a domain, these are the DNS records that matter most.
 ---
 
 ## Workflow at The Job
-1. **Check A/AAAA** → resolve domain, check IP reputation.  
-2. **Review NS** → confirm DNS provider legitimacy.  
-3. **If email-related** → analyze MX + TXT (SPF/DKIM/DMARC).  
-4. **Review SOA + TTL** → see if domain is fresh, unstable, or changing often.  
-5. **Summarize findings** → stable & legitimate vs. suspicious & risky.  
+1. **A/AAAA** → Resolve the domain and check IP reputation for suspicious or fast-flux hosting.  
+2. **NS** → Confirm DNS provider legitimacy and note any unusual or recently changed nameservers.  
+3. **MX + TXT (if email)** → Analyze SPF, DKIM, and DMARC records to assess spoofing or phishing risk.  
+4. **SOA + TTL** → Check if the domain is fresh, unstable, or frequently changing, which may indicate malicious activity.  
+5. **WHOIS** → Record registrar, creation date, and contact patterns to support a light ownership profile.  
+6. **Summarize & log** → Combine findings to classify the domain as stable or suspicious, and recommend block, monitor, or close. 
