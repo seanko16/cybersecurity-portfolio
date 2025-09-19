@@ -1,6 +1,7 @@
 # IP and Domain Threat Intelligence
 ## Overview
-During this room, I explored indicators of suspicious domains and IPs and learned how to enrich them for SOC triage. Key topics included **DNS record analysis, ASN and IP enrichment, reverse DNS, and geolocation**. I also learned how to combine ASN context, ownership info, and IP patterns to identify malicious infrastructure or risky hosting.
+During this room, I explored indicators of suspicious domains and IPs and learned how to enrich them for SOC triage. Key topics included **DNS record analysis, ASN and IP enrichment, reverse DNS, and geolocation**. I also practiced investigating exposed services, certificates, and related infrastructure to gain a better understanding of system configurations, potential risks, and malicious activity patterns.
+
 
 ---
 
@@ -51,3 +52,6 @@ When investigating an IP or ASN, these are the key elements to check:
 | [RDAP.org](https://rdap.org) | IP ownership, netrange, ASN, and abuse contacts |
 | [bgp.he.net](https://bgp.he.net) | ASN enrichment and organizational context |
 | [iplocation.net](https://www.iplocation.net) | Cross-check IP geolocation from multiple sources |
+| [Shodan](https://www.shodan.io/) | Identify open ports, running services, service banners, and geolocation of IPs |
+| [crt.sh](https://crt.sh/) | Inspect TLS certificates, record issuer, SANs, and validity period |
+| [Censys](https://censys.io/) | Explore certificates, banners, and pivot to related infrastructure for reconnaissance |
