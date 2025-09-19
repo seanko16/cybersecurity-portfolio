@@ -1,6 +1,8 @@
 # IP and Domain Threat Intelligence
 ## Overview
-During this room, I explored indicators of suspicious files and learned how to identify and investigate potential threats. Key topics included heuristic filename indicators, file hashing, threat intelligence correlation, and safe analysis of malicious files.
+During this room, I explored indicators of suspicious domains and IPs and learned how to enrich them for SOC triage. Key topics included **DNS record analysis, ASN and IP enrichment, reverse DNS, and geolocation**. I also learned how to combine ASN context, ownership info, and IP patterns to identify malicious infrastructure or risky hosting.
+
+---
 
 ## 🛡️ Domain Triage DNS Checklist
 
@@ -25,6 +27,8 @@ When enriching a domain, these are the DNS records that matter most.
 5. **WHOIS** → Record registrar, creation date, and contact patterns to support a light ownership profile.  
 6. **Summarize & log** → Combine findings to classify the domain as stable or suspicious, and recommend block, monitor, or close. 
 
+---
+
 ## 🛡️ ASN & IP Enrichment Checklist
 
 When investigating an IP or ASN, these are the key elements to check:
@@ -38,3 +42,12 @@ When investigating an IP or ASN, these are the key elements to check:
 | **Internal Logs** | - Has this IP appeared in the last 30 days? <br>- Context of previous activity | Helps correlate with past incidents. <br>Detect recurring malicious behavior. | SIEM logs, internal databases |
 | **Role Classification** | - Hosting, residential, CDN, or cloud <br>- Record reasoning | Determines if IP belongs to legitimate infrastructure or potentially attacker-controlled. | SIEM, ASN tools, geolocation sources |
 | **Outreach Preparedness** | - Verify abuse contacts for ASN <br>- Prepare report if confirmed malicious | Enables responsible reporting and escalation to reduce future attacks. | RDAP.org, ASN databases, internal SOC templates |
+
+---
+
+## Tools Used
+| Tool | Purpose |
+|------|---------|
+| [RDAP.org](https://rdap.org) | IP ownership, netrange, ASN, and abuse contacts |
+| [bgp.he.net](https://bgp.he.net) | ASN enrichment and organizational context |
+| [iplocation.net](https://www.iplocation.net) | Cross-check IP geolocation from multiple sources |
