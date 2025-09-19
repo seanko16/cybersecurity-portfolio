@@ -1,13 +1,13 @@
-# 🧩 TryHackMe — Intro To CTI
+# TryHackMe — Intro To CTI
 
-## 📚 What Have I Learned
+## What Have I Learned
 - I've learned about the Threat Intel lifecycle - for example: what happends after we find some indicators we believe are IOC's?
 We need to gather more intel about them and provide a clear report for the next step, that could be the IR/SOC T2 team for escalation.
 The report can be much more related and easier to understand if we make the applicable adjustments so that other teams can make the right
 choices quickly enough based on the security polices. risk, and impcat of the incident/event.
 Also, the room introduced the Cyber Kill Chain by Lockheed Martin again to explain the initiative behind the attacks.
 
-## 🛠️ Skills Practiced
+## Skills Practiced
 - Skill 1: checked the MITRE DEFEND framework website - explaining about counter measures
 - Skill 2: a little side Lab of triaging IOC's given by THM to capture the flag - easy
 - Skill 3: Now I know a few more tools that can help my flagging of IOC's better such as: "AbuseIPDB"
@@ -18,6 +18,6 @@ For example: Let's say we found enough informations about three IP's that are co
 we can say we advise to block them as-fast-as-possible and we send it with information gathered by the MITRE ATT&CK framework as well.
 - we do it by making a file named: Firewall_Blocklist.CSV and send it to the team.
 
-## ✔️ Takeaway 
+## Takeaway 
 I understand the better way of assesing IOC's. I now know how to act upon incidents/events that require more investigations.
 I am excited to continue to the other rooms related to CTI.
