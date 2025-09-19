@@ -1,6 +1,6 @@
 # IP and Domain Threat Intelligence
 ## Overview
-During this room, I explored indicators of suspicious domains and IPs and learned how to enrich them for SOC triage. Key topics included **DNS record analysis, ASN and IP enrichment, reverse DNS, and geolocation**. I also practiced investigating exposed services, certificates, and related infrastructure to gain a better understanding of system configurations, potential risks, and malicious activity patterns.
+During this room, I explored indicators of suspicious domains and IPs and learned how to enrich them for SOC triage. Key topics included **DNS record analysis, ASN and IP enrichment, and geolocation**. I also practiced investigating exposed services, certificates, and related infrastructure to gain a better understanding of system configurations, potential risks, and malicious activity patterns.
 
 
 ---
