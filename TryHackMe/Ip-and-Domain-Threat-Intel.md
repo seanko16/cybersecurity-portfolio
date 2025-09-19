@@ -17,10 +17,24 @@ When enriching a domain, these are the DNS records that matter most.
 
 ---
 
-## Workflow at The Job
+## Workflow for Domain Enrichment
 1. **A/AAAA** → Resolve the domain and check IP reputation for suspicious or fast-flux hosting.  
 2. **NS** → Confirm DNS provider legitimacy and note any unusual or recently changed nameservers.  
 3. **MX + TXT (if email)** → Analyze SPF, DKIM, and DMARC records to assess spoofing or phishing risk.  
 4. **SOA + TTL** → Check if the domain is fresh, unstable, or frequently changing, which may indicate malicious activity.  
 5. **WHOIS** → Record registrar, creation date, and contact patterns to support a light ownership profile.  
 6. **Summarize & log** → Combine findings to classify the domain as stable or suspicious, and recommend block, monitor, or close. 
+
+## 🛡️ ASN & IP Enrichment Checklist
+
+When investigating an IP or ASN, these are the key elements to check:
+
+| Element | What to Check | Why It Matters | Tools |
+|---------|---------------|----------------|-------|
+| **ASN** | - Confirm ASN number <br>- Check organization controlling it <br>- Note origin and role | Identifies which network controls the IP range. <br>Helps spot clusters of malicious activity or infrastructure. | [bgp.he.net](https://bgp.he.net), [bgpview.io](https://bgpview.io), [ipinfo.io](https://ipinfo.io), `whois` |
+| **RDAP Info** | - Netrange (IP block) <br>- Organization <br>- Abuse contacts | Provides ownership context and official contacts for reporting abuse. | [RDAP.org](https://rdap.org), `whois` |
+| **Geolocation** | - Capture country from at least two sources <br>- Record mismatches | Reveals physical location of IP. <br>Mismatches can indicate proxies, VPNs, or suspicious hosting. | [iplocation.net](https://www.iplocation.net), [ipinfo.io](https://ipinfo.io) |
+| **Reverse DNS (rDNS)** | - Check PTR records <br>- Identify hosting type (residential, ISP, cloud) | Reverse DNS can hint at type of hosting. <br>Useful for correlation, but don’t rely solely on it. | `nslookup -type=PTR <IP>`, [mxtoolbox.com](https://mxtoolbox.com/ReverseLookup.aspx) |
+| **Internal Logs** | - Has this IP appeared in the last 30 days? <br>- Context of previous activity | Helps correlate with past incidents. <br>Detect recurring malicious behavior. | SIEM logs, internal databases |
+| **Role Classification** | - Hosting, residential, CDN, or cloud <br>- Record reasoning | Determines if IP belongs to legitimate infrastructure or potentially attacker-controlled. | SIEM, ASN tools, geolocation sources |
+| **Outreach Preparedness** | - Verify abuse contacts for ASN <br>- Prepare report if confirmed malicious | Enables responsible reporting and escalation to reduce future attacks. | RDAP.org, ASN databases, internal SOC templates |
