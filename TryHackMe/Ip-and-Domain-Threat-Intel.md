@@ -46,6 +46,15 @@ When investigating an IP or ASN, these are the key elements to check:
 
 ---
 
+## Services & Certificates Workflow
+1. **Check Shodan/Censys banners** → Identify open services and misconfigurations.  
+2. **Review TLS certificates** → Record issuer, SANs, and validity period.  
+3. **Spot anomalies** → Multiple SANs, brand look-alikes, or bursts of issuance.  
+4. **Pivot** → Use certificates or banners to find related infrastructure.  
+5. **Assess blast radius** → Evaluate risk based on service type and ASN context (e.g., RDP on residential IP, self-signed TLS on small ranges, TLS with many SANs on CDN).
+
+---
+
 ## Tools Used
 | Tool | Purpose |
 |------|---------|
@@ -57,10 +66,3 @@ When investigating an IP or ASN, these are the key elements to check:
 | [Censys](https://censys.io/) | Explore certificates, banners, and pivot to related infrastructure for reconnaissance |
 
 ---
-
-## Services & Certificates Workflow
-1. **Check Shodan/Censys banners** → Identify open services and misconfigurations.  
-2. **Review TLS certificates** → Record issuer, SANs, and validity period.  
-3. **Spot anomalies** → Multiple SANs, brand look-alikes, or bursts of issuance.  
-4. **Pivot** → Use certificates or banners to find related infrastructure.  
-5. **Assess blast radius** → Evaluate risk based on service type and ASN context (e.g., RDP on residential IP, self-signed TLS on small ranges, TLS with many SANs on CDN).
