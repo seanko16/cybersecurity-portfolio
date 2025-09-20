@@ -1,6 +1,6 @@
 # Module 02 — Cloud Security Risks: Identify and Protect Against Threats
 
-## 📚 Key Learnings
+## Key Learnings
 
 - Explored core principles of cloud threat and vulnerability management, including patching vs. rehydration.
 - Learned asset management strategies: identifying, assessing, and protecting cloud resources.
@@ -8,7 +8,7 @@
 - Applied IT and automation tools for continuous security operations in the cloud.
 - Developed hands-on skills with posture management, cloud security scanning, and remediation techniques.
 
-## 🛡️ Security Program for Small Businesses
+## Security Program for Small Businesses
 
 • Studied the essential steps for building a security program:
 
@@ -18,6 +18,6 @@
 4. Apply fixes/patches
 5. Continuously monitor
 
-## ✔️ Takeaway
+## Takeaway
 
 Gained a structured understanding of modern cloud security threats and practical defense strategies.
