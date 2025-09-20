@@ -1,7 +1,7 @@
 # IP and Domain Threat Intelligence
 
 ## Overview
-During this TryHackMe room, I learned how to investigate suspicious domains and IPs to support SOC triage. I explored **DNS records, ASN and IP enrichment, geolocation, exposed services, and SSL/TLS certificates**. The focus was on understanding system configurations, identifying potential risks, and detecting malicious activity patterns.
+During this TryHackMe room, I learned how to investigate suspicious domains and IPs to support SOC triage. I explored **DNS records, ASN and IP enrichment, geolocation, exposed services, and SSL/TLS certificates**. I also completed a **practical investigation challenge**, where I enriched real-world indicators including domains and IPs, identified associated ASNs and RIRs, checked NS/SOA records, and evaluated registration details to inform security decisions.  
 
 ## Checklists
 
