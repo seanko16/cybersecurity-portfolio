@@ -24,22 +24,23 @@ During this TryHackMe room, I learned how to investigate suspicious domains and 
 | **Reverse DNS (rDNS)** | PTR records, hosting type | Hints at hosting type (residential, cloud, ISP) | `nslookup -type=PTR <IP>`, [mxtoolbox.com](https://mxtoolbox.com/ReverseLookup.aspx) |
 | **Internal Logs** | Past appearances, context | Detect recurring malicious activity | SIEM logs, internal databases |
 | **Role Classification** | Hosting type, reasoning | Determines legitimacy of infrastructure | SIEM, ASN tools, geolocation sources |
-| **Outreach Preparedness** | Abuse contacts, reporting | Enables responsible escalation | RDAP.org, ASN databases, SOC templates |
+| **Outreach Preparedness** | Abuse contacts, reporting | Enables responsible escalation | RDAP.org, ASN databases, SOC templates | 
+
+## Overall Workflow (Beginning → End)
+1. **Verify Indicator** – Confirm the domain/IP appears in your telemetry and is relevant to your environment.  
+2. **Enrich Data** – Collect DNS records (A/AAAA, NS, MX, TXT, SOA, TTL), IP reputation, ASN, geolocation, service banners, SSL/TLS certificates, and historical data.  
+3. **Analyze & Score** – Apply confidence scoring, correlate across data sources, and document rationale.  
+4. **Decide Action** – Choose to block, monitor, or allow the indicator. Prefer precise controls, add expiry, and fully document decisions.  
+5. **Hunt & Notify** – Search for related indicators, inform stakeholders, and create follow-up tasks.  
 
 ### Services & Certificates Workflow
 1. Check **Shodan/Censys banners** → identify open services and misconfigurations  
 2. Review **TLS certificates** → record issuer, SANs, validity period  
 3. Spot **anomalies** → multiple SANs, brand look-alikes, bursts of issuance  
 4. Pivot → find related infrastructure using certificates or banners  
-5. Assess **blast radius** → evaluate risk based on service type and ASN context  
+5. Assess **blast radius** → evaluate risk based on service type and ASN context
 
-## Overall Workflow (Beginning → End)
-1. Enrich domain using DNS records (A/AAAA, NS, MX, TXT, SOA, TTL)  
-2. Cross-check IP reputation, ASN, and geolocation  
-3. Review internal logs and past activity for correlation  
-4. Investigate exposed services via Shodan/Censys  
-5. Analyze SSL/TLS certificates for suspicious SANs and issuance bursts  
-6. Summarize findings to classify domains/IPs and recommend actions  
+---
 
 ## New Tools Discovered
 - Cisco Talos  
