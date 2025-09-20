@@ -91,7 +91,7 @@ Ensure `html_escape_table` properly maps characters such as `<, >, &, " and '`. 
 
 ### Lab Issue / Support Note
 
-The lab contains a verification bug: Section 5 does not correctly validate remediation progress, which may prevent the lab from marking as completed despite successful remediation and re-scanning. Report this behavior to TryHackMe support if encountered.
+The lab contains a verification bug: Section 5 does not correctly validate remediation progress, which may prevent the lab from marking as completed despite successful remediation and re-scanning. Report this behavior to Google Cloud support if encountered.
 
 -----
 
@@ -99,7 +99,6 @@ The lab contains a verification bug: Section 5 does not correctly validate remed
 
   - Prefer domain/path-level controls instead of broad IP-range blocks for cloud/CDN-hosted services to avoid collateral impact.
   - Use temporary and restrictive scan-time firewall rules; remove or tighten them after scans finish.
-  - Prefer standardized escaping libraries or templating engines with auto-escaping over custom implementations.
   - Always verify remediation by rescanning and correlating logs.
   - Document actions and decisions to support auditability and knowledge transfer.
 
@@ -108,14 +107,5 @@ The lab contains a verification bug: Section 5 does not correctly validate remed
 ### Next Steps (optional)
 
   - Integrate automated scanning into CI/CD pipelines for continuous verification.
-  - Replace manual escaping with a vetted library or templating engine with built-in escaping.
   - Harden the VM: enforce least privilege, restrict service accounts, remove unnecessary packages, and apply OS hardening benchmarks.
 
------
-
-### Commit-ready checklist
-
-  - [ ] Replace placeholder `<STATIC_IP>` with the actual reserved IP before sharing publicly.
-  - [ ] Remove or secure the permissive firewall rule after verification.
-  - [ ] Store remediation code in the repository with a short test demonstrating the fix.
-  - [ ] Add references to the lab ticket or TryHackMe room ID if needed for traceability.
