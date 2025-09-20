@@ -17,7 +17,7 @@ I began documenting my work on GitHub midway through my courses. Earlier project
 - Explore pentesting as a secondary interest.
 
 ## 📌 Current Focus
-- Completing TryHackMe **SOC Analyst Path** (1 lab per day).
+- Completing TryHackMe **Pentest Path** (1 lab per day).
 - Building detection playbooks for common attack techniques.
 - Documenting GCP security projects and Modules.
 
