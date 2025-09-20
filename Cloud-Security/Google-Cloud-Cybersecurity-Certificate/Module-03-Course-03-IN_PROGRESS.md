@@ -1,7 +1,7 @@
 so far I've learned about TTL policies.
 TTL policies let us put an expiration time on a data asset.
-NOTE: the data asset becomes inaccessible after the TTL expires, but goolge notes that its easy to delete as the course described in the documentation.
-they are created/under under the "Firestore" section in the google cloud console.
+NOTE: the data asset becomes inaccessible after the TTL expires, but google notes that its easy to delete as the course described in the documentation.
+they are created/deleted under the "Firestore" section in the google cloud console.
 
 
 key words learned:
