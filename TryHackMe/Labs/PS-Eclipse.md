@@ -16,7 +16,7 @@ Always check these locations first:
 - `C:\Users\<username>\`
 - `Startup` folders (`Run`, `Startup`)
 
-➡ These paths are prime hunting grounds for suspicious executables and artifacts.
+-> These paths are prime hunting grounds for suspicious executables and artifacts.
 
 ---
 
@@ -39,7 +39,7 @@ Persistence is usually achieved with **Windows native tools**:
 - **Registry Keys** → check `HKCU\Software\Microsoft\Windows\CurrentVersion\Run` and  
   `HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Run` for persistence.
 
-➡ Look for newly added tasks, services, or registry entries as **indicators of persistence**.
+-> Look for newly added tasks, services, or registry entries as **indicators of persistence**.
 
 ---
 
@@ -51,7 +51,7 @@ Malware often communicates with external C2 servers. To investigate:
   - [VirusTotal](https://www.virustotal.com)
   - [Censys](https://censys.io)
 
-➡ High-volume outbound connections often point directly to the attacker’s infrastructure.
+-> High-volume outbound connections often point directly to the attacker’s infrastructure.
 
 ---
 
@@ -61,7 +61,7 @@ Ransomware almost always leaves a **ransom note**. Common filenames include:
 - `*_README.txt`
 - `HOW_TO_RECOVER_YOUR_FILES.txt`
 
-➡ These files contain **instructions and threats**, and often reveal the **malware family name**.
+-> These files contain **instructions and threats**, and often reveal the **malware family name**.
 
 ---
 
@@ -72,7 +72,7 @@ To confidently identify the malware:
 2. Hash the suspicious binary/script (e.g., SHA-256).  
 3. Submit to **threat intelligence sources** like VirusTotal.  
 
-➡ This provides attribution, context, and community insight into the malware’s capabilities.
+-> This provides attribution, context, and community insight into the malware’s capabilities.
 
 ---
 
@@ -88,7 +88,7 @@ The **PS Eclipse** challenge demonstrated how attackers:
 
 ## Windows Forensic Essentials Checklist
 
-> ⚠️ **Note:** This checklist was AI-generated Adapt before using in real investigations.
+> ⚠️ **Note:** This checklist was AI-generated.
 
 | Item | What to Check | Why it Matters |
 |------|---------------|----------------|
