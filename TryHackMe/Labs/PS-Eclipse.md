@@ -1,50 +1,87 @@
-TryHackMe: PS Eclipse Walkthrough
-📝 Challenge Summary
-This document details the analysis of the TryHackMe PS Eclipse room, a forensic challenge focused on a Windows endpoint compromised by malicious activity. The investigation involved analyzing various system artifacts to understand the attacker's actions, including the initial infection vector, methods for privilege escalation and persistence, network communication, and the identification of the malware itself.
+# 🔎 TryHackMe: PS Eclipse Walkthrough
 
-💡 Key Learnings & Forensic Techniques
-1. Initial Access & File Locations
-Attackers often download malicious files to common, less-monitored system directories to evade detection. When performing a forensic analysis, always prioritize checking locations like:
+## 📝 Challenge Summary
+This room focused on analyzing a Windows endpoint compromised by malicious activity.  
+The investigation included tracing the attacker’s steps: **initial infection vector, privilege escalation, persistence, network communication, and malware identification.**
 
-C:\Temp
+---
 
-C:\Users\<username>\
+## 💡 Key Learnings & Forensic Techniques
 
-Startup folders (run, startup)
+### 1. Initial Access & File Locations
+Attackers typically drop malicious files in **common system directories** to avoid detection.  
+Always check these locations first:
 
-These locations are prime spots for discovering suspicious files or artifacts left by an attacker.
+- `C:\Temp\`
+- `C:\Users\<username>\`
+- `Startup` folders (`Run`, `Startup`)
 
-2. Command Obfuscation
-Malicious commands, particularly those executed via PowerShell, are frequently encoded (e.g., using Base64) to hide their true intent. It's a critical step in any investigation to decode these commands. Decoded commands can reveal valuable information such as:
+➡️ These paths are prime hunting grounds for suspicious executables and artifacts.
 
-Hidden URLs or IP addresses for command-and-control (C2) servers.
+---
 
-The full path to downloaded payloads.
+### 2. Command Obfuscation
+Attackers often encode PowerShell commands (e.g., Base64) to mask their true purpose.  
+**Decoding is critical** — it often reveals:
 
-The specific actions the malware is configured to perform.
+- Hidden **C2 IPs/domains**
+- Full payload download paths
+- Specific attacker actions (persistence, privilege escalation, etc.)
 
-3. Privilege Escalation & Persistence
-Attackers use built-in Windows utilities to achieve privilege escalation and persistence. A common technique is to create a scheduled task to run the malware with elevated privileges, ensuring it executes automatically on startup or at a specific time.
+---
 
-Key executables and registry locations to investigate for persistence mechanisms include:
+### 3. Privilege Escalation & Persistence
+Persistence is usually achieved with **Windows native tools**:
 
-schtasks.exe: Used to manage scheduled tasks. Look for command-line arguments like /Create, /TN (Task Name), and /TR (Task Run) to identify newly created tasks.
+- **`schtasks.exe`** → creates scheduled tasks (`/Create`, `/TN`, `/TR`) to rerun malware with **SYSTEM** privileges.  
+- **`sc.exe`** → manages services; attackers may create malicious services.  
+- **`powershell.exe`** → commonly abused to download & execute payloads.  
+- **Registry Keys** → check `HKCU\Software\Microsoft\Windows\CurrentVersion\Run` and  
+  `HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Run` for persistence.
 
-sc.exe: Manages Windows services. Attackers may create a new service to run their payload.
+➡️ Look for newly added tasks, services, or registry entries as **indicators of persistence**.
 
-powershell.exe: A versatile tool used to download and execute malicious code.
+---
 
-Registry Keys: Check HKCU (HKEY_CURRENT_USER) and HKLM (HKEY_LOCAL_MACHINE) for newly added Run or RunOnce entries.
+### 4. Command & Control (C2) Communication
+Malware often communicates with external C2 servers. To investigate:
 
-4. Command and Control (C2) Communication
-To identify the remote server the malware communicates with, analyze network logs for unusual connections. Look for a high volume of requests to a specific IP address or domain. Once a suspicious IP is identified, use threat intelligence platforms like VirusTotal or Censys to gather more information, such as its reputation and historical use in malicious campaigns.
+- Check **network logs** for **frequent requests** to specific IPs/domains.
+- Enrich suspicious IPs via:
+  - [VirusTotal](https://www.virustotal.com)
+  - [Censys](https://censys.io)
 
-5. Ransomware Identification
-When dealing with ransomware, always look for readme files left on the system. These files, commonly named _README.txt or HOW_TO_RECOVER_YOUR_FILES.txt, contain the ransom demand and instructions. The filename of the ransomware note can often provide a clue to the actual name of the malicious script or binary.
+➡️ High-volume outbound connections often point directly to the attacker’s infrastructure.
 
-6. Malware Identification
-To professionally name and document the malware, use the following methods:
+---
 
-Examine the ransom note for any clues or names.
+### 5. Ransomware Identification
+Ransomware almost always leaves a **ransom note**. Common filenames include:
 
-Submit the file's hash (e.g., SHA-256) to public threat intelligence databases like VirusTotal. This will likely provide a confirmed name and additional context from the security community.
+- `*_README.txt`
+- `HOW_TO_RECOVER_YOUR_FILES.txt`
+
+➡️ These files contain **instructions and threats**, and often reveal the **malware family name**.
+
+---
+
+### 6. Malware Identification
+To confidently identify the malware:
+
+1. Inspect the ransom note for names or references.  
+2. Hash the suspicious binary/script (e.g., SHA-256).  
+3. Submit to **threat intelligence sources** like VirusTotal.  
+
+➡️ This provides attribution, context, and community insight into the malware’s capabilities.
+
+---
+
+## ✅ TL;DR
+The **PS Eclipse** challenge demonstrated how attackers:  
+- Drop files into common Windows directories  
+- Use **PowerShell & obfuscation** for execution  
+- Abuse **scheduled tasks, services, and registry keys** for persistence  
+- Communicate with C2 servers over repeated outbound requests  
+- Leave clear **ransomware IOCs** like README files & altered wallpapers  
+
+👉 Forensic triage means knowing **where to look, what to decode, and which artifacts to prioritize.**
