@@ -1,4 +1,4 @@
-# TryHackMe: PS Eclipse Walkthrough
+# TryHackMe: PS Eclipse 
 
 ## Challenge Summary
 This room focused on analyzing a Windows endpoint compromised by malicious activity.  
