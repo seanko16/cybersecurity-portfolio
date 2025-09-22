@@ -1,4 +1,4 @@
-# GCP Cybersecurity Module — Automation, IaC, and Security Best Practices
+# Module 3 - Cloud Native Principles of Ephemerality & Immutability
 
 ## Overview
 In this module, I explored how **automation, Infrastructure as Code (IaC), and security best practices** interact in Google Cloud Platform (GCP). Key concepts include ephemeral resources, immutable infrastructure, DevSecOps practices, declarative vs imperative IaC, Terraform usage, and AI-assisted cloud security. The module emphasizes reducing human error, improving consistency, and embedding security from the start.
