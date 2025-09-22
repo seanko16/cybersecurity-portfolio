@@ -1,4 +1,4 @@
-# Module 02 — Cloud Security Risks: Identify and Protect Against Threats
+# Module 02 — Threat & Vulnerability Management
 
 ## Key Learnings
 
