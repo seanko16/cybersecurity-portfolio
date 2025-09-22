@@ -1,7 +1,7 @@
 # Threat Intelligence Tools
 
 ## Overview
-This room introduces the different **types of threat intelligence** and key **tools for investigation**. I am currently progressing through it, learning how to classify intelligence, use OSINT platforms, and conduct hands-on investigations using multiple tools.
+This room introduces the different **types of threat intelligence** and key **tools for investigation**. I learned how to classify intelligence, use OSINT platforms, and conduct hands-on investigations using multiple tools.
 
 ---
 
@@ -78,8 +78,3 @@ At the end of this room, I received **three investigation challenges**:
   - **WHO.IS**  
   - **RDAP.org**  
   - **Cisco Talos**
-
----
-
-## Status
-📌 **This module is still in progress.** I will expand this file with my completed investigations and conclusions once I finish the challenges.
