@@ -104,7 +104,7 @@ The lab contains a verification bug: Section 5 does not correctly validate remed
 
 -----
 
-### Next Steps (optional)
+### Next Steps 
 
   - Integrate automated scanning into CI/CD pipelines for continuous verification.
   - Harden the VM: enforce least privilege, restrict service accounts, remove unnecessary packages, and apply OS hardening benchmarks.
