@@ -1,7 +1,7 @@
-# Threat Intelligence Module — In Progress
+# Threat Intelligence Tools
 
 ## Overview
-This module introduces the different **types of threat intelligence** and key **tools for investigation**. I am currently progressing through it, learning how to classify intelligence, use OSINT platforms, and conduct hands-on investigations using multiple tools.
+This room introduces the different **types of threat intelligence** and key **tools for investigation**. I am currently progressing through it, learning how to classify intelligence, use OSINT platforms, and conduct hands-on investigations using multiple tools.
 
 ---
 
