@@ -1,4 +1,4 @@
-# TryHackMe — "Invite Only" Lab
+# TryHackMe — "Invite Only" 
 
 ## Status
 **Completed**
