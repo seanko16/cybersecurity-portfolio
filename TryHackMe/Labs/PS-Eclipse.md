@@ -1,5 +1,12 @@
 # TryHackMe: PS Eclipse 
 
+---
+
+## Status
+**Completed**
+
+---
+
 ## Challenge Summary
 This room focused on analyzing a Windows endpoint compromised by malicious activity.  
 The investigation included tracing the attacker’s steps: **initial infection vector, privilege escalation, persistence, network communication, and malware identification.**
