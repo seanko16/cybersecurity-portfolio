@@ -1,7 +1,5 @@
 # TryHackMe: PS Eclipse 
 
----
-
 ## Status
 **Completed**
 
