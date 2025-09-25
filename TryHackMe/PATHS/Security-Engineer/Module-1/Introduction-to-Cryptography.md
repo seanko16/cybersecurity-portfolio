@@ -65,7 +65,7 @@ It ensures:
 ### Command example  
 ```bash
 $ hmac256 <key> <filename>
-
+```
 
 ---
 
