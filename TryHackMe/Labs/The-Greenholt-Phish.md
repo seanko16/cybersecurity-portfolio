@@ -1,4 +1,4 @@
-# The Greenholt Phish - Challenge
+# The Greenholt Phish - Phishing Email Analysis
 
 ## 🎯 Objective
 The obejctive was to Investigate the suspicious Email that was sent to a worker in the organization. 
@@ -17,7 +17,7 @@ The goal was to **identify malicious indicators** by dissecting the email’s co
 - Conducted technical analysis of full headers to uncover the **true origin**.  
 - Found a **mismatch** between `From` and `Reply-To` addresses → common phishing indicator.  
 - Traced `Received` headers to identify the **originating IP**.  
-- WHOIS lookup performed on the IP to determine owner legitimacy (legit mail provider vs. suspicious/unexpected source).  
+- [MX Lookup](https://mxtoolbox.com/MXLookup.aspx) performed on the IP to determine owner legitimacy (legit mail provider vs. suspicious/unexpected source).  
 
 ---
 
@@ -35,9 +35,12 @@ The goal was to **identify malicious indicators** by dissecting the email’s co
 - Safely analyzed the suspicious attachment.  
 
   - **Hashing & Reputation:** Calculated SHA256 hash → checked against threat intel platforms like [VirusTotal](https://www.virustotal.com/) to detect known malware.  
-  - **File Type Identification:** Verified the **true file type** to detect deceptive extensions (e.g., `invoice.pdf.exe`). Such tricks often disguise malicious payloads as harmless files.  
+  - **File Type Identification:** Verified the **true file type** to detect deceptive extensions (e.g., `invoice.pdf.exe`). Such tricks often disguise malicious payloads as harmless files.
+ 
 
----
+
+
+***
 
 # Tier 1 SOC Analyst Checklist – Suspicious Email Analysis
 
