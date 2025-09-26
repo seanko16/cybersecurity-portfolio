@@ -1,6 +1,6 @@
 # Phishing Email Analysis: Key Techniques 
 
-## Introduction
+## Overview
 
 This document summarizes the key takeaways and phishing techniques observed in the ["Phishing Emails in Action"](https://tryhackme.com/room/phishingemailsinaction) room. The purpose of this analysis is to deconstruct real-world phishing emails to better understand the tactics, techniques, and procedures (TTPs) used by threat actors. This serves as a personal reference and learning repository for identifying and mitigating phishing threats.
 
