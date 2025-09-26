@@ -1,10 +1,11 @@
 # Mastering Phishing Analysis: A Practical Workflow Summary
 
+## Overview
 This document outlines a systematic workflow for analyzing and responding to phishing threats, based on a hands-on lab focused on practical tooling. The core achievement was mastering a multi-stage investigative process, moving from initial email triage to in-depth malware detonation in a secure sandbox environment.
 
 ---
 
-## A Structured Phishing Investigation Workflow 🕵️
+## A Structured Phishing Investigation Workflow 
 
 A successful investigation follows a clear, repeatable process to ensure all evidence is collected safely and analyzed thoroughly. The methodology I practiced involves three primary stages.
 
@@ -46,6 +47,4 @@ When an email includes an attachment, the investigation escalates to dynamic ana
 
 ## Conclusion: From Evidence to Intelligence
 This exercise solidified a comprehensive methodology that mirrors a real-world Security Operations Center (SOC) workflow. By combining static analysis in **PhishTool** with dynamic detonation in **Any.Run**, I can confidently deconstruct a phishing attempt, safely extract actionable intelligence (IOCs), and understand the full scope of a threat.  
-
-This systematic approach is critical for accurate threat identification and effective incident response.
 
