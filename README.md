@@ -15,7 +15,7 @@ Earlier projects are not included here, but from this point forward I’ve **com
 ## 🎯 Goals
 - Build a strong foundation as a SOC Analyst (Tier 1 → Tier 2).
 - Develop cloud security skills - By finishing the GCP cybersecurity Course.
-- Explore pentesting as a secondary interest.
+- Explore the project theme.
 
 ## 📌 Current Focus
 - Completing TryHackMe **Pentest Path** (1 lab per day).
