@@ -1,7 +1,7 @@
-# TryHackMe - Phishing Prevention Room
+# TryHackMe - Phishing Prevention 
 
 ## Overview
-Welcome to the **Phishing Prevention** room! 📧 This document is a simple guide to the essential concepts of email security covered in this TryHackMe module.  
+This document is a simple guide to the essential concepts of email security covered.  
 We'll break down how bad guys fake emails and explore the key technologies—**SPF**, **DKIM**, **DMARC**, and **S/MIME**—that we use to stop them. We'll also cover other defensive actions and tools that help protect users from malicious emails. Think of this as your friendly cheat sheet for understanding how to make email safer.
 
 ---
@@ -91,5 +91,7 @@ During this room, the following tools and resources were highlighted for inciden
 
 - **Wireshark:** A powerful tool for analyzing network traffic. Useful to inspect SMTP packets and response codes to understand communication between email servers. The Wireshark SMTP Display Filter Reference is a handy resource for finding relevant fields.  
 - **Phishing Playbook:** A structured Incident Response Playbook for handling phishing incidents — an excellent template for consistent response procedures.
+[Counteractive Phishing Incident Response Playbook](https://github.com/counteractive/incident-response-plan-template/blob/master/playbooks/playbook-phishing.md)
+
 
 ---
